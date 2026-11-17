@@ -8,11 +8,15 @@
 brew install ackertyson/hype/hype
 ```
 
-Or `brew tap ackertyson/hype` and then `brew install hype`. In a `Brewfile`:
+Installing by this fully-qualified name also marks the formula as trusted, which
+Homebrew requires for third-party taps. If you tap first and install by the
+short name instead, run `brew trust ackertyson/hype` once.
+
+In a `Brewfile`:
 
 ```ruby
 tap "ackertyson/hype"
-brew "hype"
+brew "ackertyson/hype/hype"
 ```
 
 Prebuilt bottles are published for Apple Silicon macOS 15+ and x86_64 Linux; anywhere else, Homebrew builds from source.
