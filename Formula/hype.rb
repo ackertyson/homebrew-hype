@@ -1,15 +1,32 @@
 class Hype < Formula
   desc "Render images as high-fidelity terminal text art"
   homepage "https://github.com/ackertyson/hype"
-  url "https://github.com/ackertyson/hype/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "37c06e7e7be4515c5aa7193d986eeaccff369018e0c43f5402c0de374a9330e2"
   license "MIT"
-  head "https://github.com/ackertyson/hype.git", branch: "master"
 
-  depends_on "rust" => :build
+  on_macos do
+    on_arm do
+      url "https://github.com/ackertyson/hype/releases/download/v0.1.1/hype-0.1.1-aarch64-apple-darwin.tar.gz"
+      sha256 "0ce93adef0e31dff98d2108d01dee18f4b66b28051ec2bd279bfc8a8d5f0e085"
+    end
+    on_intel do
+      url "https://github.com/ackertyson/hype/releases/download/v0.1.1/hype-0.1.1-x86_64-apple-darwin.tar.gz"
+      sha256 "ff7ef8ecab8ec05fbb9d8afd68859ab6dd8d66137eb4cd4a4e31ddf5b71d9ffb"
+    end
+  end
+
+  on_linux do
+    on_arm do
+      url "https://github.com/ackertyson/hype/releases/download/v0.1.1/hype-0.1.1-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "056b4e28d20be3d9ac8cc24b0fbb9cca10cfb019499378ad9727bb5229c004bb"
+    end
+    on_intel do
+      url "https://github.com/ackertyson/hype/releases/download/v0.1.1/hype-0.1.1-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "26bcb9692d5ee442efa9540024f3ab7f03d202d1606405babec744f9ccc89dde"
+    end
+  end
 
   def install
-    system "cargo", "install", *std_cargo_args
+    bin.install "hype"
   end
 
   test do
