@@ -19,16 +19,16 @@ tap "ackertyson/hype"
 brew "ackertyson/hype/hype"
 ```
 
-Homebrew builds hype from source with Cargo (installing Rust for the build).
+The formula installs the prebuilt binary from hype's GitHub release (macOS and
+static-musl Linux, arm64 and x86_64), so it has no dependencies, build-time or runtime.
 
 ## Releasing a new version
 
-1. In hype, bump `version` in `Cargo.toml`, merge, then tag and push:
-   `git tag vX.Y.Z && git push origin vX.Y.Z`.
-2. In `Formula/hype.rb`, point `url` at the new tag and update `sha256`:
+1. In hype, run `build/tag.sh X.Y.Z` on an up-to-date `master`. It bumps
+   `Cargo.toml`, commits, tags and pushes; the tag's Release workflow publishes
+   the binaries and `checksums.txt`.
+2. Once that workflow finishes, run `./release.sh X.Y.Z` here. It regenerates
+   `Formula/hype.rb` from `hype.rb.template` with the release's checksums, commits
+   and pushes to `main`. CI then audits, installs and tests the formula on macOS and Linux.
 
-   ```sh
-   curl -sL https://github.com/ackertyson/hype/archive/refs/tags/vX.Y.Z.tar.gz | shasum -a 256
-   ```
-
-3. Commit and push to `main`. CI builds, tests and audits the formula on macOS and Linux.
+Edit `hype.rb.template`, not `Formula/hype.rb`, which is overwritten on each release.
