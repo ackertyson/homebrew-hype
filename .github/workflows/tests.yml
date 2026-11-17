@@ -29,7 +29,9 @@ jobs:
 
       # Install first: installing by fully-qualified name trusts the formula,
       # which audit and test need before they will load it.
-      - run: brew style ackertyson/hype
+      # Only the formula: tap-wide style also holds the release scripts to
+      # Homebrew's own shell style.
+      - run: brew style ackertyson/hype/hype
       - run: brew install ackertyson/hype/hype
       - run: brew audit --strict --online --formula ackertyson/hype/hype
       - run: brew test ackertyson/hype/hype
