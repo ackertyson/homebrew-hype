@@ -5,23 +5,23 @@ class Hype < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/ackertyson/hype/releases/download/v0.1.1/hype-0.1.1-aarch64-apple-darwin.tar.gz"
-      sha256 "0ce93adef0e31dff98d2108d01dee18f4b66b28051ec2bd279bfc8a8d5f0e085"
+      url "https://github.com/ackertyson/hype/releases/download/v0.1.2/hype-0.1.2-aarch64-apple-darwin.tar.gz"
+      sha256 "f0efda6222c3c22e7d0615ee32c5a91804bed4b2d5baffefe8405daab48bcd40"
     end
     on_intel do
-      url "https://github.com/ackertyson/hype/releases/download/v0.1.1/hype-0.1.1-x86_64-apple-darwin.tar.gz"
-      sha256 "ff7ef8ecab8ec05fbb9d8afd68859ab6dd8d66137eb4cd4a4e31ddf5b71d9ffb"
+      url "https://github.com/ackertyson/hype/releases/download/v0.1.2/hype-0.1.2-x86_64-apple-darwin.tar.gz"
+      sha256 "649b8e8e272b8fed8b7246a99d6edf29627458b48bf551e33be285b6b7630325"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/ackertyson/hype/releases/download/v0.1.1/hype-0.1.1-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "056b4e28d20be3d9ac8cc24b0fbb9cca10cfb019499378ad9727bb5229c004bb"
+      url "https://github.com/ackertyson/hype/releases/download/v0.1.2/hype-0.1.2-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "036d7bdea18b7296d47f6c13d3bca1bb55c1c148805be365391de8452c689630"
     end
     on_intel do
-      url "https://github.com/ackertyson/hype/releases/download/v0.1.1/hype-0.1.1-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "26bcb9692d5ee442efa9540024f3ab7f03d202d1606405babec744f9ccc89dde"
+      url "https://github.com/ackertyson/hype/releases/download/v0.1.2/hype-0.1.2-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "809ce4897d06a4ee8b36086054c046708cc0d17f6f56423af2ca3ee3c6d254f9"
     end
   end
 
